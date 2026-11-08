@@ -66,7 +66,7 @@ Regra de peso: Archivo só em 400 e 600; Plex Mono só em 400 e 500. Nada de neg
 
 ## Imagem forte
 
-A imagem forte é a **foto do hero**: um contêiner 3:2 à direita do título, cantos retos, com uma linha de cota em mono passando por baixo ("1600 × 1067"), como se a própria foto fosse uma peça medida no projeto. Enquanto a foto do Canva não chega, `img/hero.webp` é uma composição abstrata gerada com Pillow nas cores da identidade (concreto com grão, planos de grafite, barras de aço em diagonal e uma faixa de trena), 1600px de largura, sem texto.
+A imagem forte é a **foto do hero**: um contêiner 3:2 à direita do título, cantos retos, com uma linha de cota em mono passando por baixo ("1600 × 1067"), como se a própria foto fosse uma peça medida no projeto. A foto atual de `img/hero.webp` foi gerada por IA no Canva (ilustrativa, não é uma obra real), 1620 x 1080px, sem texto.
 
 As demais ilustrações são SVG inline ou CSS: os ícones dos três serviços, as miniaturas do portfólio (plantas e cortes esquemáticos em linha, estilo prancha de projeto), as barras do estimador e o diagrama de Gantt da linha do tempo.
 

@@ -41,7 +41,7 @@ O estudo completo está em [`docs/identidade.md`](docs/identidade.md), inclusive
 - **Paleta:** Concreto `#ECE9E4` (fundo), Argamassa `#DCD8D1` (apoio), Grafite quente `#2A2724` (texto e seções escuras), Aço `#5B5F66` (texto secundário e cotas), Linha `#B9B4AB` (bordas e grade) e Trena `#F2B705` (a única cor viva, uma vez por tela: o grifo do título, a etapa ativa, o filtro ativo, a barra do acabamento). Fugi de propósito do azul-corporativo e do laranja de capacete: as cores vêm do canteiro, concreto curado, aço e o amarelo da trena.
 - **Fontes:** Archivo nos títulos (um pouco condensada, como letra de prancheta) e no texto; IBM Plex Mono em todos os números, cotas, valores e códigos, porque número alinhado em coluna passa precisão. As duas são locais, em `fonts/`, com licença SIL OFL.
 - **Grade visível:** linhas finas a cada 64px no fundo das seções escuras e "cotas" (linha com traço nas pontas e rótulo em mono) abrindo cada seção e medindo a foto do hero.
-- **Foto do hero:** contêiner 3:2 com cantos retos. A imagem atual em `img/hero.webp` é provisória, gerada com Pillow nas cores da identidade; será trocada pela foto gerada no Canva com o prompt do estudo.
+- **Foto do hero:** contêiner 3:2 com cantos retos. A imagem em `img/hero.webp` é uma foto gerada por IA no Canva (ilustrativa, não é uma obra real).
 - **Movimento:** só a cota do hero se esticando e o grifo aparecendo na abertura, mais as barras crescendo quando o resultado muda. Com "reduzir movimento" ligado no aparelho, nada se mexe.
 
 ## Como funciona por dentro (em linguagem comum)
