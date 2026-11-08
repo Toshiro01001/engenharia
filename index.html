@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>Prumo Engenharia | Projeto estrutural, laudos e acompanhamento de obra em Cuiabá (demonstração)</title>
+  <meta name="description" content="Site de demonstração de um escritório fictício de engenharia civil: estimador de custo de obra, linha do tempo interativa, portfólio filtrável e pedido de laudo ou visita. Feito pela Mil e Uma Linhas!">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <p class="faixa-demo">
+    Demonstração da <a href="https://mileumalinhas.com.br" rel="noopener">Mil e Uma Linhas!</a> com dados fictícios. Nenhum serviço é contratado aqui.
+  </p>
+
+  <header class="topo">
+    <div class="miolo topo-linha">
+      <a class="marca" href="#inicio">
+        <svg class="marca-icone" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 2v16" /><path d="M9 18h14l-7 12z" /><path d="M4 7h24" /></svg>
+        <span class="marca-texto">
+          <span class="marca-nome">Prumo Engenharia</span>
+          <span class="marca-sub">CREA/MT 000000 · fictício</span>
+        </span>
+      </a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="menu-botao-linhas" aria-hidden="true"></span>
+        <span class="menu-botao-rotulo">Menu</span>
+      </button>
+      <nav id="menu" class="menu" aria-label="Seções do site">
+        <a href="#servicos">Serviços</a>
+        <a href="#estimador">Custo</a>
+        <a href="#prazo">Prazo</a>
+        <a href="#obras">Obras</a>
+        <a href="#visita" class="menu-destaque">Pedir visita</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ABERTURA -->
+    <section id="inicio" class="hero escuro grade-fundo">
+      <div class="miolo hero-grade">
+        <div class="hero-texto">
+          <p class="cota cota-anim"><span class="cota-linha"></span><span class="cota-rotulo">Engenharia civil · Cuiabá, MT</span></p>
+          <h1 class="hero-titulo">Estrutura <span class="sem-quebra"><span class="grifo">calculada</span>,</span><br>obra acompanhada.</h1>
+          <p class="hero-apoio">Fazemos o projeto estrutural, emitimos o laudo e vamos ao canteiro conferir se a obra está saindo como o cálculo manda. Comece estimando o custo da sua obra ou peça uma visita.</p>
+          <div class="hero-acoes">
+            <a class="botao botao-claro" href="#estimador">Estimar custo da obra</a>
+            <a class="botao botao-contorno-claro" href="#visita">Pedir visita ou laudo</a>
+          </div>
+          <dl class="hero-numeros">
+            <div><dt>Projetos estruturais</dt><dd>212</dd></div>
+            <div><dt>Laudos em 2025</dt><dd>38</dd></div>
+            <div><dt>Anos de canteiro</dt><dd>14</dd></div>
+          </dl>
+        </div>
+        <figure class="hero-figura">
+          <div class="hero-moldura">
+            <img class="hero-foto" src="img/hero.webp" width="1600" height="1067" alt="Bancada de concreto com um prumo pendurado, uma trena amarela aberta e uma planta estrutural ao fundo" fetchpriority="high">
+          </div>
+          <figcaption class="cota cota-fina"><span class="cota-linha"></span><span class="cota-rotulo">1600 × 1067 · 3:2</span><span class="cota-linha"></span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="secao">
+      <div class="miolo">
+        <p class="cota"><span class="cota-num">01</span><span class="cota-linha"></span><span class="cota-rotulo">Serviços</span></p>
+        <h2>Três coisas que fazemos bem.</h2>
+        <p class="secao-frase">Esta parte mostra o que o escritório faz. Escolha o serviço e leia o que você recebe no fim.</p>
+        <div class="servicos">
+          <article class="servico">
+            <svg class="servico-icone" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M6 40h36" /><path d="M10 40V14h8v26M30 40V14h8v26" /><path d="M8 14h32" /><path d="M8 8h32v6H8z" /></svg>
+            <h3>Projeto estrutural</h3>
+            <p>Calculamos fundação, pilares, vigas e lajes em concreto armado ou aço, com memorial de cálculo e detalhamento pronto para o canteiro ler.</p>
+            <p class="servico-rotulo">Você recebe</p>
+            <ul>
+              <li>Pranchas de fôrma e armação</li>
+              <li>Memorial de cálculo</li>
+              <li>Quantitativo de aço e concreto</li>
+              <li>ART registrada no CREA</li>
+            </ul>
+          </article>
+          <article class="servico">
+            <svg class="servico-icone" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M10 6h22l8 8v28H10z" /><path d="M32 6v8h8" /><path d="M16 24l6 6 4-4 6 6" /><path d="M16 38h18" /></svg>
+            <h3>Laudos técnicos</h3>
+            <p>Vistoriamos o imóvel, medimos, fotografamos e escrevemos um laudo que diz o que é a trinca, a infiltração ou o recalque, e o que fazer.</p>
+            <p class="servico-rotulo">Você recebe</p>
+            <ul>
+              <li>Laudo com fotos e medições</li>
+              <li>Diagnóstico e causa provável</li>
+              <li>Recomendações em ordem de urgência</li>
+              <li>ART de laudo</li>
+            </ul>
+          </article>
+          <article class="servico">
+            <svg class="servico-icone" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M24 4v40" /><path d="M8 44h32" /><path d="M24 12l14 10M24 12L10 22" /><path d="M10 22v12M38 22v12" /><circle cx="24" cy="30" r="3" /></svg>
+            <h3>Acompanhamento de obra</h3>
+            <p>Visitamos a obra em cada etapa que importa: antes de concretar, depois de desformar, ao fechar as instalações. Registramos tudo e avisamos antes de virar problema.</p>
+            <p class="servico-rotulo">Você recebe</p>
+            <ul>
+              <li>Relatório de cada visita</li>
+              <li>Checagem de armação e prumo</li>
+              <li>Controle do concreto</li>
+              <li>Diário de obra compartilhado</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTIMADOR -->
+    <section id="estimador" class="secao escuro grade-fundo">
+      <div class="miolo">
+        <p class="cota"><span class="cota-num">02</span><span class="cota-linha"></span><span class="cota-rotulo">Custo</span></p>
+        <h2>Quanto custa a sua obra, em ordem de grandeza.</h2>
+        <p class="secao-frase">Informe a área, o tipo de obra e o padrão de acabamento. O resultado aparece na hora e muda conforme você mexe.</p>
+        <div class="estimador-grade">
+          <form id="form-estimador" class="form-escuro" novalidate>
+            <div class="campo">
+              <label for="area">Área construída (m²)</label>
+              <input id="area" name="area" type="number" inputmode="decimal" min="20" max="20000" step="1" value="180" required>
+              <p class="campo-ajuda">Soma de todos os pavimentos. Entre 20 e 20.000 m².</p>
+              <p class="campo-erro" id="area-erro" hidden></p>
+            </div>
+            <fieldset class="campo">
+              <legend>Tipo de obra</legend>
+              <div class="opcoes">
+                <label class="opcao"><input type="radio" name="tipo" value="casa" checked><span>Casa</span></label>
+                <label class="opcao"><input type="radio" name="tipo" value="comercial"><span>Comercial</span></label>
+                <label class="opcao"><input type="radio" name="tipo" value="galpao"><span>Galpão</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="campo">
+              <legend>Padrão de acabamento</legend>
+              <div class="opcoes">
+                <label class="opcao"><input type="radio" name="padrao" value="economico"><span>Econômico</span></label>
+                <label class="opcao"><input type="radio" name="padrao" value="medio" checked><span>Médio</span></label>
+                <label class="opcao"><input type="radio" name="padrao" value="alto"><span>Alto</span></label>
+              </div>
+            </fieldset>
+            <div class="campo">
+              <label for="pavimentos">Pavimentos</label>
+              <select id="pavimentos" name="pavimentos">
+                <option value="1">1 (térreo)</option>
+                <option value="2">2</option>
+                <option value="3">3 ou mais</option>
+              </select>
+            </div>
+            <p class="aviso-ficticio">Valores fictícios, só para a demonstração. Não use como orçamento. Uma estimativa real depende do terreno, do projeto e da cotação do dia.</p>
+          </form>
+          <div class="estimador-resultado" aria-live="polite">
+            <p class="resultado-rotulo">Custo estimado da obra</p>
+            <p class="resultado-total"><span id="est-min">R$ 0</span><span class="resultado-a">a</span><span id="est-max">R$ 0</span></p>
+            <p class="resultado-sub">Cerca de <span class="mono" id="est-m2">R$ 0</span> por m² · <span class="mono" id="est-area">0 m²</span></p>
+            <ol class="barras" id="est-barras">
+              <li class="barra" data-etapa="projetos"><span class="barra-nome">Projetos e taxas</span><span class="barra-trilho"><span class="barra-fill"></span></span><span class="barra-valor mono">R$ 0</span></li>
+              <li class="barra" data-etapa="fundacao"><span class="barra-nome">Fundação</span><span class="barra-trilho"><span class="barra-fill"></span></span><span class="barra-valor mono">R$ 0</span></li>
+              <li class="barra" data-etapa="estrutura"><span class="barra-nome">Estrutura</span><span class="barra-trilho"><span class="barra-fill"></span></span><span class="barra-valor mono">R$ 0</span></li>
+              <li class="barra" data-etapa="vedacao"><span class="barra-nome">Alvenaria e cobertura</span><span class="barra-trilho"><span class="barra-fill"></span></span><span class="barra-valor mono">R$ 0</span></li>
+              <li class="barra" data-etapa="instalacoes"><span class="barra-nome">Instalações</span><span class="barra-trilho"><span class="barra-fill"></span></span><span class="barra-valor mono">R$ 0</span></li>
+              <li class="barra" data-etapa="acabamento"><span class="barra-nome">Acabamento</span><span class="barra-trilho"><span class="barra-fill"></span></span><span class="barra-valor mono">R$ 0</span></li>
+            </ol>
+            <p class="resultado-prazo">Prazo típico: <span class="mono" id="est-prazo">0 meses</span>. <a href="#prazo" id="est-ver-prazo">Ver etapa por etapa</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LINHA DO TEMPO -->
+    <section id="prazo" class="secao">
+      <div class="miolo">
+        <p class="cota"><span class="cota-num">03</span><span class="cota-linha"></span><span class="cota-rotulo">Prazo</span></p>
+        <h2>O que acontece em cada etapa, e o que você decide.</h2>
+        <p class="secao-frase">Escolha o porte da obra e o mês de início. Depois toque em uma etapa da linha do tempo para ver a duração, o que acontece e qual decisão é sua.</p>
+        <form id="form-prazo" class="form-linha" novalidate>
+          <div class="campo">
+            <label for="porte">Porte da obra</label>
+            <select id="porte" name="porte">
+              <option value="pequena">Pequena (até 120 m²)</option>
+              <option value="media" selected>Média (120 a 300 m²)</option>
+              <option value="grande">Grande (acima de 300 m²)</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="mes-inicio">Mês de início</label>
+            <input id="mes-inicio" name="inicio" type="month">
+          </div>
+          <p class="prazo-total">Duração total: <span class="mono" id="prazo-semanas">0 semanas</span> · Conclusão prevista: <span class="mono" id="prazo-fim">a calcular</span></p>
+        </form>
+        <div class="gantt-grade">
+          <ol class="gantt" id="gantt" aria-label="Etapas da obra"></ol>
+          <article class="etapa-detalhe" id="etapa-detalhe" aria-live="polite">
+            <p class="cota cota-fina"><span class="cota-num" id="det-num">1</span><span class="cota-linha"></span><span class="cota-rotulo" id="det-semanas">0 semanas</span></p>
+            <h3 id="det-titulo">Etapa</h3>
+            <p class="etapa-datas mono" id="det-datas"></p>
+            <h4>O que acontece</h4>
+            <p id="det-acontece"></p>
+            <h4>O que você decide</h4>
+            <ul id="det-decide"></ul>
+            <p class="etapa-alerta" id="det-alerta"></p>
+            <div class="etapa-nav">
+              <button type="button" class="botao botao-contorno" id="det-anterior">Etapa anterior</button>
+              <button type="button" class="botao botao-contorno" id="det-proxima">Próxima etapa</button>
+            </div>
+          </article>
+        </div>
+        <p class="aviso-ficticio">Durações típicas e fictícias para a demonstração. Chuva, fornecedor atrasado e mudança de projeto alteram tudo isso.</p>
+      </div>
+    </section>
+
+    <!-- OBRAS -->
+    <section id="obras" class="secao faixa-argamassa">
+      <div class="miolo">
+        <p class="cota"><span class="cota-num">04</span><span class="cota-linha"></span><span class="cota-rotulo">Obras</span></p>
+        <h2>Obras que calculamos e acompanhamos.</h2>
+        <p class="secao-frase">Filtre por tipo de obra. Cada ficha mostra o que fizemos e os números principais.</p>
+        <div class="filtros" role="group" aria-label="Filtrar obras por tipo">
+          <button type="button" class="filtro ativo" data-filtro="todas" aria-pressed="true">Todas</button>
+          <button type="button" class="filtro" data-filtro="residencial" aria-pressed="false">Residencial</button>
+          <button type="button" class="filtro" data-filtro="comercial" aria-pressed="false">Comercial</button>
+          <button type="button" class="filtro" data-filtro="industrial" aria-pressed="false">Industrial</button>
+          <button type="button" class="filtro" data-filtro="laudo" aria-pressed="false">Laudo</button>
+          <button type="button" class="filtro" data-filtro="reforma" aria-pressed="false">Reforma</button>
+        </div>
+        <p class="filtro-contagem mono" id="filtro-contagem" aria-live="polite">8 obras</p>
+        <ul class="obras" id="lista-obras">
+          <li class="obra" data-tipo="residencial">
+            <figure>
+              <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob1t"><title id="ob1t">Planta esquemática de sobrado com dois pavimentos</title><rect x="60" y="50" width="280" height="200" /><path d="M60 150h280M200 50v100M200 150v100M120 150v100M280 50v100" /><path d="M90 50v-14M90 250v14M60 20h280" class="cota-svg" /><path d="M60 36v-16M340 36v-16" class="cota-svg" /><rect x="236" y="190" width="30" height="8" class="cheio" /></svg>
+              <figcaption>
+                <p class="obra-tipo mono">Residencial · 2024</p>
+                <h3>Sobrado no Jardim Itália</h3>
+                <p>Projeto estrutural em concreto armado e acompanhamento de obra do início ao telhado.</p>
+                <dl class="obra-dados"><div><dt>Área</dt><dd>280 m²</dd></div><div><dt>Pavimentos</dt><dd>2</dd></div><div><dt>Visitas</dt><dd>11</dd></div></dl>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="obra" data-tipo="comercial">
+            <figure>
+              <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob2t"><title id="ob2t">Corte esquemático de edifício comercial de quatro pavimentos</title><path d="M40 260h320" /><path d="M80 260V60h240v200" /><path d="M80 110h240M80 160h240M80 210h240" /><path d="M140 60v200M200 60v200M260 60v200" class="fina" /><rect x="90" y="226" width="40" height="34" class="cheio" /><path d="M350 60v200" class="cota-svg" /><path d="M342 60h16M342 260h16" class="cota-svg" /></svg>
+              <figcaption>
+                <p class="obra-tipo mono">Comercial · 2023</p>
+                <h3>Edifício de salas na Av. do CPA</h3>
+                <p>Estrutura de quatro pavimentos com laje nervurada e vão livre de 9 m no térreo.</p>
+                <dl class="obra-dados"><div><dt>Área</dt><dd>1.450 m²</dd></div><div><dt>Pavimentos</dt><dd>4</dd></div><div><dt>Vão máx.</dt><dd>9 m</dd></div></dl>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="obra" data-tipo="industrial">
+            <figure>
+              <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob3t"><title id="ob3t">Pórtico de galpão em estrutura metálica com treliça</title><path d="M40 260h320" /><path d="M70 260V140L200 70l130 70v120" /><path d="M70 140h260" /><path d="M100 140l34-18 34 18 32-18 32 18 34-18 34 18" class="fina" /><path d="M134 122v18M168 122v18M200 110v30M232 122v18M266 122v18" class="fina" /><path d="M70 280h260" class="cota-svg" /><path d="M70 272v16M330 272v16" class="cota-svg" /></svg>
+              <figcaption>
+                <p class="obra-tipo mono">Industrial · 2024</p>
+                <h3>Galpão logístico no Distrito Industrial</h3>
+                <p>Projeto de estrutura metálica com pórticos de 28 m e fundação em sapatas sobre solo melhorado.</p>
+                <dl class="obra-dados"><div><dt>Área</dt><dd>2.800 m²</dd></div><div><dt>Vão</dt><dd>28 m</dd></div><div><dt>Aço</dt><dd>96 t</dd></div></dl>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="obra" data-tipo="laudo">
+            <figure>
+              <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob4t"><title id="ob4t">Parede com fissura inclinada e medição</title><rect x="60" y="40" width="280" height="220" /><path d="M110 240l40-50 20 10 36-60 18 8 46-88" class="fissura" /><circle cx="206" cy="140" r="26" class="fina" /><path d="M232 140h60" class="cota-svg" /><path d="M292 134v12" class="cota-svg" /></svg>
+              <figcaption>
+                <p class="obra-tipo mono">Laudo · 2025</p>
+                <h3>Fissuras em condomínio no Bosque da Saúde</h3>
+                <p>Laudo de causa de fissuras inclinadas em alvenaria: recalque diferencial da fundação, com plano de reforço.</p>
+                <dl class="obra-dados"><div><dt>Unidades</dt><dd>12</dd></div><div><dt>Fissuras</dt><dd>47</dd></div><div><dt>Páginas</dt><dd>38</dd></div></dl>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="obra" data-tipo="reforma">
+            <figure>
+              <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob5t"><title id="ob5t">Parede com abertura de vão escorada por viga nova</title><rect x="60" y="40" width="280" height="220" /><rect x="130" y="110" width="140" height="150" class="vazio" /><rect x="120" y="90" width="160" height="20" class="cheio" /><path d="M130 110v150M270 110v150" /><path d="M60 150h70M270 150h70" class="fina" /><path d="M130 280h140" class="cota-svg" /><path d="M130 272v16M270 272v16" class="cota-svg" /></svg>
+              <figcaption>
+                <p class="obra-tipo mono">Reforma · 2025</p>
+                <h3>Abertura de vão em casa nas Goiabeiras</h3>
+                <p>Retirada de parede estrutural com viga metálica de transição, escoramento calculado e acompanhamento no dia.</p>
+                <dl class="obra-dados"><div><dt>Vão</dt><dd>4,2 m</dd></div><div><dt>Perfil</dt><dd>W 250</dd></div><div><dt>Dias</dt><dd>6</dd></div></dl>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="obra" data-tipo="residencial">
+            <figure>
+              <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob6t"><title id="ob6t">Planta de casa térrea com laje e varanda</title><rect x="50" y="70" width="300" height="170" /><path d="M50 150h180M230 70v170M140 150v90M290 70v100M230 170h120" /><path d="M50 70l0-20M350 70l0-20M50 56h300" class="cota-svg" /><rect x="90" y="110" width="30" height="8" class="cheio" /></svg>
+              <figcaption>
+                <p class="obra-tipo mono">Residencial · 2023</p>
+                <h3>Casa térrea em Várzea Grande</h3>
+                <p>Projeto estrutural com radier e laje treliçada, pensado para orçamento apertado e obra rápida.</p>
+                <dl class="obra-dados"><div><dt>Área</dt><dd>160 m²</dd></div><div><dt>Fundação</dt><dd>Radier</dd></div><div><dt>Prazo</dt><dd>7 meses</dd></div></dl>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="obra" data-tipo="laudo">
+            <figure>
+              <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob7t"><title id="ob7t">Prancheta de vistoria com lista de itens conferidos</title><rect x="90" y="40" width="220" height="230" /><rect x="160" y="28" width="80" height="24" class="cheio" /><path d="M120 100h28M160 100h120M120 140h28M160 140h120M120 180h28M160 180h120M120 220h28M160 220h120" class="fina" /><path d="M124 100l8 8 14-16M124 140l8 8 14-16M124 180l8 8 14-16" /></svg>
+              <figcaption>
+                <p class="obra-tipo mono">Laudo · 2025</p>
+                <h3>Recebimento de apartamento novo</h3>
+                <p>Vistoria de entrega: nivelamento de piso, prumo de paredes, pontos elétricos e hidráulicos, com lista de pendências para a construtora.</p>
+                <dl class="obra-dados"><div><dt>Itens</dt><dd>184</dd></div><div><dt>Pendências</dt><dd>23</dd></div><div><dt>Horas</dt><dd>3,5</dd></div></dl>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="obra" data-tipo="comercial">
+            <figure>
+              <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob8t"><title id="ob8t">Planta de clínica com corredor central e salas</title><rect x="50" y="50" width="300" height="200" /><path d="M50 130h300M50 170h300" /><path d="M110 50v80M170 50v80M230 50v80M290 50v80M110 170v80M190 170v80M270 170v80" /><rect x="60" y="138" width="30" height="24" class="cheio" /><path d="M370 50v200" class="cota-svg" /><path d="M362 50h16M362 250h16" class="cota-svg" /></svg>
+              <figcaption>
+                <p class="obra-tipo mono">Comercial · 2024</p>
+                <h3>Clínica no bairro Santa Rosa</h3>
+                <p>Estrutura térrea com laje para equipamentos pesados na sala de imagem e acompanhamento das etapas de concretagem.</p>
+                <dl class="obra-dados"><div><dt>Área</dt><dd>420 m²</dd></div><div><dt>Sobrecarga</dt><dd>1 t/m²</dd></div><div><dt>Visitas</dt><dd>8</dd></div></dl>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+        <p class="filtro-vazio" id="filtro-vazio" hidden>Nenhuma obra desse tipo por enquanto.</p>
+      </div>
+    </section>
+
+    <!-- PEDIDO DE VISITA -->
+    <section id="visita" class="secao">
+      <div class="miolo visita-grade">
+        <div class="visita-texto">
+          <p class="cota"><span class="cota-num">05</span><span class="cota-linha"></span><span class="cota-rotulo">Visita</span></p>
+          <h2>Peça um laudo ou uma visita.</h2>
+          <p class="secao-frase">Preencha os dados e toque em "Revisar pedido". O site confere o que falta e mostra um resumo. Nesta demonstração, nada é enviado.</p>
+          <address class="visita-contato">
+            <p><strong>Prumo Engenharia</strong><br>Rua das Cotas, 120, sala 4<br>Cuiabá, MT (endereço fictício)</p>
+            <p>(65) 0000-0000 (fictício)<br>Segunda a sexta, 8h às 18h</p>
+          </address>
+        </div>
+        <form id="form-visita" class="form-visita" novalidate>
+          <div class="campo">
+            <label for="nome">Seu nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required minlength="3">
+            <p class="campo-erro" id="nome-erro" hidden></p>
+          </div>
+          <div class="campo-duplo">
+            <div class="campo">
+              <label for="telefone">Telefone</label>
+              <input id="telefone" name="telefone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(65) 90000-0000" required>
+              <p class="campo-erro" id="telefone-erro" hidden></p>
+            </div>
+            <div class="campo">
+              <label for="email">E-mail <span class="opcional">(opcional)</span></label>
+              <input id="email" name="email" type="email" autocomplete="email">
+              <p class="campo-erro" id="email-erro" hidden></p>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="servico">O que você precisa</label>
+            <select id="servico" name="servico" required>
+              <option value="">Escolha uma opção</option>
+              <option value="laudo">Laudo técnico (trinca, infiltração, recalque)</option>
+              <option value="recebimento">Vistoria de recebimento de imóvel</option>
+              <option value="projeto">Projeto estrutural</option>
+              <option value="acompanhamento">Acompanhamento de obra</option>
+              <option value="reforma">Avaliação para reforma (abrir vão, ampliar)</option>
+            </select>
+            <p class="campo-erro" id="servico-erro" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="endereco">Endereço ou bairro do imóvel</label>
+            <input id="endereco" name="endereco" type="text" autocomplete="off" required minlength="4">
+            <p class="campo-erro" id="endereco-erro" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="descricao">Conte em poucas linhas o que está acontecendo</label>
+            <textarea id="descricao" name="descricao" rows="4" required minlength="20"></textarea>
+            <p class="campo-ajuda"><span id="descricao-contagem" class="mono">0</span> de 20 caracteres mínimos</p>
+            <p class="campo-erro" id="descricao-erro" hidden></p>
+          </div>
+          <fieldset class="campo">
+            <legend>Melhor período para a visita</legend>
+            <div class="opcoes">
+              <label class="opcao"><input type="radio" name="periodo" value="manha"><span>Manhã</span></label>
+              <label class="opcao"><input type="radio" name="periodo" value="tarde"><span>Tarde</span></label>
+              <label class="opcao"><input type="radio" name="periodo" value="qualquer"><span>Qualquer</span></label>
+            </div>
+            <p class="campo-erro" id="periodo-erro" hidden></p>
+          </fieldset>
+          <p class="form-erro-geral" id="visita-erro" hidden role="alert"></p>
+          <button type="submit" class="botao">Revisar pedido</button>
+          <p class="campo-ajuda">Nada sai do seu navegador. Este formulário só mostra o resumo na tela.</p>
+        </form>
+        <article class="visita-resumo" id="visita-resumo" hidden tabindex="-1">
+          <p class="cota cota-fina"><span class="cota-rotulo">Pedido revisado</span><span class="cota-linha"></span><span class="cota-rotulo mono" id="res-protocolo">PR-0000</span></p>
+          <h3>Confira o seu pedido</h3>
+          <dl class="resumo-dados">
+            <div><dt>Nome</dt><dd id="res-nome"></dd></div>
+            <div><dt>Telefone</dt><dd id="res-telefone"></dd></div>
+            <div><dt>E-mail</dt><dd id="res-email"></dd></div>
+            <div><dt>Serviço</dt><dd id="res-servico"></dd></div>
+            <div><dt>Imóvel</dt><dd id="res-endereco"></dd></div>
+            <div><dt>Período</dt><dd id="res-periodo"></dd></div>
+            <div class="resumo-largo"><dt>Descrição</dt><dd id="res-descricao"></dd></div>
+          </dl>
+          <p class="resumo-aviso">Em um site de verdade, este pedido iria para o escritório e você receberia a confirmação por telefone. Aqui é demonstração: nada foi enviado e nada ficou guardado.</p>
+          <div class="etapa-nav">
+            <button type="button" class="botao botao-contorno" id="res-editar">Corrigir dados</button>
+            <button type="button" class="botao botao-contorno" id="res-novo">Novo pedido</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona" class="secao faixa-argamassa">
+      <div class="miolo texto-corrido">
+        <p class="cota"><span class="cota-linha"></span><span class="cota-rotulo">Como isto funciona</span></p>
+        <h2>O que este site faz e como.</h2>
+        <h3>Para quem não é da área</h3>
+        <p>Este é um site de demonstração feito pela Mil e Uma Linhas! para mostrar a escritórios de engenharia o que um site pode fazer além de mostrar fotos. Aqui você estima o custo de uma obra, vê etapa por etapa quanto tempo ela leva e o que precisa decidir, filtra obras por tipo e monta um pedido de visita que o site confere antes de resumir. A Prumo Engenharia não existe, e nenhum número aqui serve de orçamento.</p>
+        <h3>Como funciona por dentro</h3>
+        <p>Tudo acontece dentro do seu navegador, no seu celular ou computador. O site é um conjunto de três arquivos: um com o texto e a estrutura (HTML), um com a aparência (CSS) e um com as contas e os comportamentos (JavaScript). Quando você muda a área no estimador, o JavaScript multiplica a área pelo valor por metro quadrado do padrão escolhido, aplica os ajustes de tipo e de pavimentos e reparte o total nas etapas. A linha do tempo soma semanas a partir do mês de início. O filtro de obras só esconde e mostra fichas que já estão na página. O formulário confere cada campo e, se tudo estiver certo, copia os dados para o resumo. Nenhuma informação é enviada para lugar nenhum e nada fica guardado depois que você fecha a página.</p>
+        <details class="detalhes-tecnicos">
+          <summary>Detalhes técnicos</summary>
+          <ul>
+            <li>HTML, CSS e JavaScript puros, sem framework, sem biblioteca, sem CDN, sem fonte externa, sem analytics.</li>
+            <li><code>Content-Security-Policy</code> por meta tag: <code>default-src 'self'</code>, sem script inline, sem atributo <code>style</code>, <code>connect-src 'none'</code>, <code>form-action 'none'</code>. As larguras das barras são definidas por CSSOM (<code>element.style.setProperty</code>), o que a CSP permite.</li>
+            <li>Fontes locais em <code>fonts/</code>: Archivo (variável, eixos wght e wdth) e IBM Plex Mono (400 e 500), ambas SIL OFL 1.1.</li>
+            <li>Estimador: <code>total = área × R$/m²(padrão) × fator(tipo) × fator(pavimentos)</code>; a faixa é de −8% a +8%; a repartição por etapa usa percentuais fixos definidos em <code>js/app.js</code>.</li>
+            <li>Linha do tempo: oito etapas com duração base em semanas, multiplicada por um fator de porte (0,8, 1,0 ou 1,35); as datas usam <code>Date</code> nativo e <code>Intl.DateTimeFormat</code> em pt-BR.</li>
+            <li>Portfólio: filtro por atributo <code>data-tipo</code>, com <code>aria-pressed</code> nos botões e contagem em <code>aria-live</code>.</li>
+            <li>Formulário: validação própria em JavaScript (o <code>novalidate</code> desliga os balões do navegador), mensagens ligadas aos campos por <code>aria-describedby</code>, máscara de telefone, foco movido para o primeiro erro ou para o resumo.</li>
+            <li>Sem <code>localStorage</code>, sem cookies, sem <code>fetch</code>. Testes em <code>tests/site.cjs</code> com Playwright em 1280×900, iPhone 13 e 320px.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape escuro">
+    <div class="miolo rodape-linha">
+      <p><strong>Prumo Engenharia</strong> · CREA/MT 000000 · Rua das Cotas, 120, Cuiabá, MT. Empresa, pessoas, números, obras e endereço fictícios.</p>
+      <p>Site de demonstração feito pela <a href="https://mileumalinhas.com.br" rel="noopener">Mil e Uma Linhas!</a>. Nenhum dado é enviado ou guardado.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
