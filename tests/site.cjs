@@ -42,6 +42,8 @@ async function verificacoesBasicas(page, rotulo) {
     const els = document.querySelectorAll("h1,h2,h3,h4,p,a,button,label,legend,li,dt,dd,summary,span,small,address,option");
     for (const el of els) {
       if (el.closest("[hidden]") || (el.offsetParent === null && getComputedStyle(el).position !== "fixed")) continue;
+      /* A faixa de glifos rola de propósito para fora da tela, dentro de um contêiner com overflow hidden. */
+      if (el.closest('[aria-hidden="true"]')) continue;
       const cs = getComputedStyle(el);
       if (cs.overflow === "hidden" || cs.overflowX === "hidden") continue;
       if (el.tagName === "OPTION") continue;

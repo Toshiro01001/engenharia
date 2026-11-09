@@ -87,3 +87,45 @@ Variante, se a primeira sair muito "mesa de escritório":
 - Um único momento orquestrado na abertura: a linha de cota do hero "se estica" da esquerda para a direita (300ms) e o grifo de trena aparece embaixo da palavra-chave do título (250ms, depois da cota). Nada mais se mexe sozinho.
 - Respostas a ações: barras do estimador crescem em 400ms quando o resultado muda; a etapa escolhida na linha do tempo ganha o marcador de trena com transição de 200ms; cartões do portfólio somem e aparecem sem deslizar; mensagens de erro aparecem sem animação.
 - Com `prefers-reduced-motion: reduce`, todas as transições e animações ficam em 0ms e a cota e o grifo já nascem prontos.
+
+## Design systems aplicados (leva final)
+
+A paleta não mudou. O que mudou foi superfície, tipografia de display, botões, navegação, cartões, faixas, rodapé e movimento, misturando dois design systems do catálogo:
+
+- **Grotesk Zero 45** (tema claro: osso e tinta, Archivo variável e IBM Plex Mono, cruz de registro e grão) nas seções claras: serviços, prazo, obras, visita e como funciona.
+- **IX-7 Mission** (tema escuro: tinta quente com painéis de vidro, campo de grade, faixa de status e cartões de token) nas seções escuras: hero, estimador e rodapé.
+
+Regra da mistura: o verde-água do IX-7 e o vermelhão do Grotesk não entram; os dois viram Trena `#F2B705`, que continua aparecendo uma vez por tela. Nada de biblioteca externa: o que nos originais era GSAP ou Lenis virou CSS puro ou um IntersectionObserver, e tudo para com `prefers-reduced-motion`.
+
+| Padrão | Origem | Onde está |
+|---|---|---|
+| Grão (`body::after`, ruído SVG a 5%, `steps(10)` em 7s) | Grotesk Zero | toda a página |
+| Cruz de registro (`.reg-cross`, 26px, hairline a 50%) | Grotesk Zero | cota de abertura das seções 01 a 05 e os quatro tiques de canto da moldura do hero (`.canto`) |
+| Eixo de peso no display (`.palavra`, 600 a 760 perto do ponteiro, ease 16% por quadro) | Grotesk Zero | `h1.hero-titulo`; parado em 600 no toque e com movimento reduzido |
+| Spec block (mono 11px caixa alta, .14em, entrelinha 2.1, valores em 500) | Grotesk Zero | `dl.hero-numeros` |
+| Ledger (rótulo mono .18em à esquerda, valor tabular à direita, hairline) | Grotesk Zero | `dl.obra-dados` e `dl.resumo-dados` |
+| Preset buttons (hairline 1px, mono 11px .16em caixa alta, ativo preenche de tinta em .25s) | Grotesk Zero | `.filtro` (ativo com sublinhado Trena) e `label.opcao` do estimador e do pedido de visita |
+| Ribbon (duas linhas em mono rolando em sentidos opostos, 28s, entre hairlines) | Grotesk Zero | `div.faixa-ribbon`, entre serviços e estimador, fundo Argamassa |
+| Navbar com `mix-blend-mode: difference`, sem fundo próprio, sublinhado que cresce em .35s | Grotesk Zero | `header.topo` (fixo por `position: sticky`, sobreposto ao hero); no celular, com o menu aberto, o cabeçalho ganha fundo Grafite sólido para os links ficarem legíveis |
+| Rodapé revelado por baixo e wordmark que afina sob o ponteiro (Archivo 900 a 150) | Grotesk Zero | `footer.rodape` sticky no fundo, `#rodape-marca` "PRUMO" com cruz Trena |
+| Map field (grade + brilho radial Trena a 5% + vinheta rgba(11,12,10,.72)) | IX-7 | `.grade-fundo` em `#inicio` e `#estimador` |
+| Glass panel (rgba(31,29,25,.48), blur 4px, linha a 16%) | IX-7 | `.estimador-resultado` e campos de `form.form-escuro` |
+| Status strip (pares rótulo/valor em mono, hairlines verticais) | IX-7 | `.resultado-sub`, `.resultado-prazo` e `div.rodape-status` |
+| Token cards (rótulo pequeno em caixa alta, valor grande, ativo com barra Trena) | IX-7 | cabeçalho de `article.etapa-detalhe` (etapa, duração, datas) |
+| Replay reveal (sobe 30px com fade em .7s `cubic-bezier(.16,1,.3,1)`, escalonado 80ms) | Grotesk Zero | `.reveal` em serviços, obras, linha do tempo, detalhe da etapa e formulário de visita; na abertura as duas linhas do h1 sobem em 1.1s antes de a cota se esticar |
+
+Observação: os presets usam 11px (não os 10px do original) para manter a leitura em caixa alta; a área de toque continua com 44px de altura.
+
+## Fotos (leva final)
+
+As fotos abaixo substituem os ícones dos serviços e três desenhos do portfólio, e entram na seção de visita. São geradas por IA no Canva (ilustrativas, sem pessoas identificáveis) e estão em `img/` em webp, com o nome e a proporção finais.
+
+| Arquivo | Proporção | Onde | Prompt |
+|---|---|---|---|
+| `img/servico-projeto.webp` | 3:2 (1456 × 970) | serviço Projeto estrutural | Fotografia editorial realista para site premium de engenharia civil. Prancha de projeto estrutural em papel branco aberta sobre uma bancada de concreto polido cinza-claro quente, com linhas finas em grafite mostrando pilares e vigas, um escalímetro triangular de alumínio e um pedaço curto de vergalhão de aço apoiados sobre o papel. Luz natural lateral de fim de tarde vinda da esquerda, sombras longas e suaves. Paleta restrita a cinza-concreto quente (#ECE9E4), grafite (#2A2724) e aço (#5B5F66), sem acento amarelo nesta imagem. Sem pessoas, sem texto legível, sem logotipos. Proporção 3:2 horizontal. |
+| `img/servico-laudo.webp` | 3:2 (1456 × 970) | serviço Laudos técnicos | Fotografia editorial realista, close de uma parede de alvenaria com reboco cinza-claro e uma fissura inclinada fina atravessando o quadro, com uma trena amarela de aço aberta na horizontal cruzando a fissura e um pequeno fissurômetro de acrílico transparente colado ao lado. Luz lateral quente e suave de fim de tarde, textura do reboco visível. Paleta: cinza-concreto quente, grafite nas sombras e um único acento amarelo (#F2B705) na trena. Sem pessoas, sem texto legível, sem logotipos. Estilo sóbrio de revista de arquitetura, proporção 3:2 horizontal. |
+| `img/servico-acompanhamento.webp` | 3:2 (1456 × 970) | serviço Acompanhamento de obra | Fotografia editorial realista de um canteiro de obra silencioso ao fim do dia: armação de vergalhões de aço de uma laje vista em diagonal, fôrmas de madeira clara ao fundo e, em primeiro plano, um prumo de latão escurecido pendurado por um fio fino, perfeitamente vertical e parado. Luz natural lateral quente, sombras longas, profundidade de campo curta com foco no prumo. Paleta: cinza-concreto quente, grafite, aço e tons de madeira crua dessaturada, sem acento amarelo. Sem pessoas, sem texto, sem logotipos. Proporção 3:2 horizontal. |
+| `img/obra-sobrado.webp` | 4:3 (1456 × 1088) | obra Sobrado no Jardim Itália | Fotografia editorial de arquitetura de um sobrado residencial contemporâneo de dois pavimentos em Cuiabá, estrutura de concreto aparente com marcas de fôrma, paredes em reboco cinza-claro quente, laje em balanço sobre a varanda e esquadrias escuras. Céu limpo e claro, luz de fim de tarde dourada e suave vinda da esquerda, sombras longas. Enquadramento frontal ligeiramente em diagonal, lente 35mm, tudo nítido. Paleta: concreto quente, grafite, aço, vegetação de cerrado dessaturada. Sem pessoas, sem carros, sem texto, sem placas, sem logotipos. Proporção 4:3 horizontal. |
+| `img/obra-galpao.webp` | 4:3 (1456 × 1088) | obra Galpão logístico | Fotografia editorial realista do interior de um galpão logístico recém-concluído e vazio: pórticos e treliças de aço pintadas em cinza-grafite em perspectiva profunda, telhas translúcidas deixando entrar luz difusa, piso de concreto polido cinza-claro refletindo levemente a estrutura. Luz suave e uniforme, tons dessaturados, composição simétrica com ponto de fuga ao centro. Paleta: concreto quente, grafite, aço. Sem pessoas, sem empilhadeiras, sem caixas, sem texto, sem logotipos. Proporção 4:3 horizontal. |
+| `img/obra-vistoria.webp` | 4:3 (1456 × 1088) | obra Recebimento de apartamento novo | Fotografia editorial realista, vista de cima em ângulo de 45 graus, de uma prancheta de alumínio escovado com folhas de checklist em branco sem texto legível, um nível de bolha de alumínio e uma trena amarela de aço fechada, apoiados no piso de porcelanato cinza-claro de um apartamento novo e vazio, com uma parede branca e um rodapé ao fundo desfocados. Luz natural lateral de janela, sombras suaves. Paleta: cinza-claro quente, grafite, aço e um único acento amarelo (#F2B705) na trena. Sem pessoas, sem texto legível, sem logotipos. Proporção 4:3 horizontal. |
+| `img/escritorio-equipe.webp` | 4:5 (1088 × 1360) | seção Visita, entre a frase e o endereço | Fotografia editorial realista de site premium de engenharia: dois engenheiros adultos, vistos de costas e de perfil, sem rosto reconhecível, debruçados sobre uma prancha estrutural aberta em uma mesa de concreto polido, um deles apontando uma viga com uma lapiseira; ao fundo, parede de concreto aparente e uma estante com rolos de projeto. Luz natural lateral de fim de tarde vinda de uma janela à esquerda, sombras longas e suaves. Roupas em tons neutros de grafite e cinza, sem logotipos. Paleta: cinza-concreto quente, grafite, aço, um detalhe discreto de amarelo em um capacete apoiado na mesa. Sem texto legível. Proporção vertical 4:5. |

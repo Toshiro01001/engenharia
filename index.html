@@ -24,7 +24,7 @@
           <span class="marca-sub">CREA/MT 000000 · fictício</span>
         </span>
       </a>
-      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu">
+      <button class="menu-botao" id="menu-botao" type="button" aria-expanded="false" aria-controls="menu">
         <span class="menu-botao-linhas" aria-hidden="true"></span>
         <span class="menu-botao-rotulo">Menu</span>
       </button>
@@ -45,7 +45,7 @@
       <div class="miolo hero-grade">
         <div class="hero-texto">
           <p class="cota cota-anim"><span class="cota-linha"></span><span class="cota-rotulo">Engenharia civil · Cuiabá, MT</span></p>
-          <h1 class="hero-titulo">Estrutura <span class="sem-quebra"><span class="grifo">calculada</span>,</span><br>obra acompanhada.</h1>
+          <h1 class="hero-titulo"><span class="h1-linha"><span class="palavra">Estrutura</span> <span class="sem-quebra"><span class="grifo palavra">calculada</span>,</span></span><br><span class="h1-linha"><span class="palavra">obra</span> <span class="palavra">acompanhada.</span></span></h1>
           <p class="hero-apoio">Fazemos o projeto estrutural, emitimos o laudo e vamos ao canteiro conferir se a obra está saindo como o cálculo manda. Comece estimando o custo da sua obra ou peça uma visita.</p>
           <div class="hero-acoes">
             <a class="botao botao-claro" href="#estimador">Estimar custo da obra</a>
@@ -60,6 +60,7 @@
         <figure class="hero-figura">
           <div class="hero-moldura">
             <img class="hero-foto" src="img/hero.webp" width="1620" height="1080" alt="Prumo de latão pendurado sobre bancada de concreto, ao lado de uma trena amarela aberta e uma planta estrutural. Imagem gerada por IA, ilustrativa." fetchpriority="high">
+            <span class="canto canto-se" aria-hidden="true"></span><span class="canto canto-sd" aria-hidden="true"></span><span class="canto canto-ie" aria-hidden="true"></span><span class="canto canto-id" aria-hidden="true"></span>
           </div>
           <figcaption class="cota cota-fina"><span class="cota-linha"></span><span class="cota-rotulo">1600 × 1067 · 3:2</span><span class="cota-linha"></span></figcaption>
         </figure>
@@ -69,12 +70,12 @@
     <!-- SERVIÇOS -->
     <section id="servicos" class="secao">
       <div class="miolo">
-        <p class="cota"><span class="cota-num">01</span><span class="cota-linha"></span><span class="cota-rotulo">Serviços</span></p>
+        <p class="cota"><span class="reg-cross" aria-hidden="true"></span><span class="cota-num">01</span><span class="cota-linha"></span><span class="cota-rotulo">Serviços</span></p>
         <h2>Três coisas que fazemos bem.</h2>
         <p class="secao-frase">Esta parte mostra o que o escritório faz. Escolha o serviço e leia o que você recebe no fim.</p>
         <div class="servicos">
-          <article class="servico">
-            <svg class="servico-icone" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M6 40h36" /><path d="M10 40V14h8v26M30 40V14h8v26" /><path d="M8 14h32" /><path d="M8 8h32v6H8z" /></svg>
+          <article class="servico reveal">
+            <figure class="servico-foto"><img src="img/servico-projeto.webp" width="1456" height="970" alt="Prancha de projeto estrutural impressa aberta sobre bancada de concreto, com escalímetro e um pedaço de vergalhão sobre as linhas. Imagem gerada por IA, ilustrativa." loading="lazy" decoding="async"></figure>
             <h3>Projeto estrutural</h3>
             <p>Calculamos fundação, pilares, vigas e lajes em concreto armado ou aço, com memorial de cálculo e detalhamento pronto para o canteiro ler.</p>
             <p class="servico-rotulo">Você recebe</p>
@@ -85,8 +86,8 @@
               <li>ART registrada no CREA</li>
             </ul>
           </article>
-          <article class="servico">
-            <svg class="servico-icone" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M10 6h22l8 8v28H10z" /><path d="M32 6v8h8" /><path d="M16 24l6 6 4-4 6 6" /><path d="M16 38h18" /></svg>
+          <article class="servico reveal">
+            <figure class="servico-foto"><img src="img/servico-laudo.webp" width="1456" height="970" alt="Fissura inclinada em parede de alvenaria rebocada, medida por uma trena amarela de aço presa por ímã. Imagem gerada por IA, ilustrativa." loading="lazy" decoding="async"></figure>
             <h3>Laudos técnicos</h3>
             <p>Vistoriamos o imóvel, medimos, fotografamos e escrevemos um laudo que diz o que é a trinca, a infiltração ou o recalque, e o que fazer.</p>
             <p class="servico-rotulo">Você recebe</p>
@@ -97,8 +98,8 @@
               <li>ART de laudo</li>
             </ul>
           </article>
-          <article class="servico">
-            <svg class="servico-icone" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M24 4v40" /><path d="M8 44h32" /><path d="M24 12l14 10M24 12L10 22" /><path d="M10 22v12M38 22v12" /><circle cx="24" cy="30" r="3" /></svg>
+          <article class="servico reveal">
+            <figure class="servico-foto"><img src="img/servico-acompanhamento.webp" width="1456" height="970" alt="Armação de aço de uma laje antes da concretagem, com fôrmas de madeira e um prumo de fio pendurado em primeiro plano. Imagem gerada por IA, ilustrativa." loading="lazy" decoding="async"></figure>
             <h3>Acompanhamento de obra</h3>
             <p>Visitamos a obra em cada etapa que importa: antes de concretar, depois de desformar, ao fechar as instalações. Registramos tudo e avisamos antes de virar problema.</p>
             <p class="servico-rotulo">Você recebe</p>
@@ -113,10 +114,16 @@
       </div>
     </section>
 
+    <!-- FAIXA -->
+    <div class="faixa-ribbon" aria-hidden="true">
+      <div class="ribbon ribbon-1"><span>PROJETO ESTRUTURAL · LAUDO TÉCNICO · ART · VISTORIA · DIÁRIO DE OBRA · PROJETO ESTRUTURAL · LAUDO TÉCNICO · ART · VISTORIA · DIÁRIO DE OBRA · PROJETO ESTRUTURAL · LAUDO TÉCNICO · ART · VISTORIA · DIÁRIO DE OBRA · </span><span>PROJETO ESTRUTURAL · LAUDO TÉCNICO · ART · VISTORIA · DIÁRIO DE OBRA · PROJETO ESTRUTURAL · LAUDO TÉCNICO · ART · VISTORIA · DIÁRIO DE OBRA · PROJETO ESTRUTURAL · LAUDO TÉCNICO · ART · VISTORIA · DIÁRIO DE OBRA · </span></div>
+      <div class="ribbon ribbon-2"><span>PROJETO ESTRUTURAL · LAUDO TÉCNICO · ART · VISTORIA · DIÁRIO DE OBRA · PROJETO ESTRUTURAL · LAUDO TÉCNICO · ART · VISTORIA · DIÁRIO DE OBRA · PROJETO ESTRUTURAL · LAUDO TÉCNICO · ART · VISTORIA · DIÁRIO DE OBRA · </span><span>PROJETO ESTRUTURAL · LAUDO TÉCNICO · ART · VISTORIA · DIÁRIO DE OBRA · PROJETO ESTRUTURAL · LAUDO TÉCNICO · ART · VISTORIA · DIÁRIO DE OBRA · PROJETO ESTRUTURAL · LAUDO TÉCNICO · ART · VISTORIA · DIÁRIO DE OBRA · </span></div>
+    </div>
+
     <!-- ESTIMADOR -->
     <section id="estimador" class="secao escuro grade-fundo">
       <div class="miolo">
-        <p class="cota"><span class="cota-num">02</span><span class="cota-linha"></span><span class="cota-rotulo">Custo</span></p>
+        <p class="cota"><span class="reg-cross" aria-hidden="true"></span><span class="cota-num">02</span><span class="cota-linha"></span><span class="cota-rotulo">Custo</span></p>
         <h2>Quanto custa a sua obra, em ordem de grandeza.</h2>
         <p class="secao-frase">Informe a área, o tipo de obra e o padrão de acabamento. O resultado aparece na hora e muda conforme você mexe.</p>
         <div class="estimador-grade">
@@ -156,7 +163,7 @@
           <div class="estimador-resultado" aria-live="polite">
             <p class="resultado-rotulo">Custo estimado da obra</p>
             <p class="resultado-total"><span id="est-min">R$ 0</span><span class="resultado-a">a</span><span id="est-max">R$ 0</span></p>
-            <p class="resultado-sub">Cerca de <span class="mono" id="est-m2">R$ 0</span> por m² · <span class="mono" id="est-area">0 m²</span></p>
+            <p class="resultado-sub status-strip"><span class="st"><span class="st-k">Por m²</span><span class="st-v mono" id="est-m2">R$ 0</span></span><span class="st"><span class="st-k">Área</span><span class="st-v mono" id="est-area">0 m²</span></span></p>
             <ol class="barras" id="est-barras">
               <li class="barra" data-etapa="projetos"><span class="barra-nome">Projetos e taxas</span><span class="barra-trilho"><span class="barra-fill"></span></span><span class="barra-valor mono">R$ 0</span></li>
               <li class="barra" data-etapa="fundacao"><span class="barra-nome">Fundação</span><span class="barra-trilho"><span class="barra-fill"></span></span><span class="barra-valor mono">R$ 0</span></li>
@@ -165,7 +172,7 @@
               <li class="barra" data-etapa="instalacoes"><span class="barra-nome">Instalações</span><span class="barra-trilho"><span class="barra-fill"></span></span><span class="barra-valor mono">R$ 0</span></li>
               <li class="barra" data-etapa="acabamento"><span class="barra-nome">Acabamento</span><span class="barra-trilho"><span class="barra-fill"></span></span><span class="barra-valor mono">R$ 0</span></li>
             </ol>
-            <p class="resultado-prazo">Prazo típico: <span class="mono" id="est-prazo">0 meses</span>. <a href="#prazo" id="est-ver-prazo">Ver etapa por etapa</a>.</p>
+            <p class="resultado-prazo status-strip"><span class="st"><span class="st-k">Prazo típico</span><span class="st-v mono" id="est-prazo">0 meses</span></span><span class="st st-acao"><a href="#prazo" id="est-ver-prazo">Ver etapa por etapa</a></span></p>
           </div>
         </div>
       </div>
@@ -174,7 +181,7 @@
     <!-- LINHA DO TEMPO -->
     <section id="prazo" class="secao">
       <div class="miolo">
-        <p class="cota"><span class="cota-num">03</span><span class="cota-linha"></span><span class="cota-rotulo">Prazo</span></p>
+        <p class="cota"><span class="reg-cross" aria-hidden="true"></span><span class="cota-num">03</span><span class="cota-linha"></span><span class="cota-rotulo">Prazo</span></p>
         <h2>O que acontece em cada etapa, e o que você decide.</h2>
         <p class="secao-frase">Escolha o porte da obra e o mês de início. Depois toque em uma etapa da linha do tempo para ver a duração, o que acontece e qual decisão é sua.</p>
         <form id="form-prazo" class="form-linha" novalidate>
@@ -194,10 +201,13 @@
         </form>
         <div class="gantt-grade">
           <ol class="gantt" id="gantt" aria-label="Etapas da obra"></ol>
-          <article class="etapa-detalhe" id="etapa-detalhe" aria-live="polite">
-            <p class="cota cota-fina"><span class="cota-num" id="det-num">1</span><span class="cota-linha"></span><span class="cota-rotulo" id="det-semanas">0 semanas</span></p>
+          <article class="etapa-detalhe reveal" id="etapa-detalhe" aria-live="polite">
+            <div class="tokens">
+              <div class="token token-ativo"><span class="token-k">Etapa</span><span class="token-v mono" id="det-num">1</span></div>
+              <div class="token"><span class="token-k">Duração</span><span class="token-v mono" id="det-semanas">0 semanas</span></div>
+              <div class="token token-largo"><span class="token-k">Datas</span><span class="token-v token-v-menor mono" id="det-datas"></span></div>
+            </div>
             <h3 id="det-titulo">Etapa</h3>
-            <p class="etapa-datas mono" id="det-datas"></p>
             <h4>O que acontece</h4>
             <p id="det-acontece"></p>
             <h4>O que você decide</h4>
@@ -216,7 +226,7 @@
     <!-- OBRAS -->
     <section id="obras" class="secao faixa-argamassa">
       <div class="miolo">
-        <p class="cota"><span class="cota-num">04</span><span class="cota-linha"></span><span class="cota-rotulo">Obras</span></p>
+        <p class="cota"><span class="reg-cross" aria-hidden="true"></span><span class="cota-num">04</span><span class="cota-linha"></span><span class="cota-rotulo">Obras</span></p>
         <h2>Obras que calculamos e acompanhamos.</h2>
         <p class="secao-frase">Filtre por tipo de obra. Cada ficha mostra o que fizemos e os números principais.</p>
         <div class="filtros" role="group" aria-label="Filtrar obras por tipo">
@@ -229,9 +239,9 @@
         </div>
         <p class="filtro-contagem mono" id="filtro-contagem" aria-live="polite">8 obras</p>
         <ul class="obras" id="lista-obras">
-          <li class="obra" data-tipo="residencial">
+          <li class="obra reveal" data-tipo="residencial">
             <figure>
-              <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob1t"><title id="ob1t">Planta esquemática de sobrado com dois pavimentos</title><rect x="60" y="50" width="280" height="200" /><path d="M60 150h280M200 50v100M200 150v100M120 150v100M280 50v100" /><path d="M90 50v-14M90 250v14M60 20h280" class="cota-svg" /><path d="M60 36v-16M340 36v-16" class="cota-svg" /><rect x="236" y="190" width="30" height="8" class="cheio" /></svg>
+              <img class="obra-foto" src="img/obra-sobrado.webp" width="1456" height="1088" alt="Sobrado residencial contemporâneo em concreto aparente e reboco claro, com laje em balanço, fotografado no fim da tarde. Imagem gerada por IA, ilustrativa." loading="lazy" decoding="async">
               <figcaption>
                 <p class="obra-tipo mono">Residencial · 2024</p>
                 <h3>Sobrado no Jardim Itália</h3>
@@ -240,7 +250,7 @@
               </figcaption>
             </figure>
           </li>
-          <li class="obra" data-tipo="comercial">
+          <li class="obra reveal" data-tipo="comercial">
             <figure>
               <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob2t"><title id="ob2t">Corte esquemático de edifício comercial de quatro pavimentos</title><path d="M40 260h320" /><path d="M80 260V60h240v200" /><path d="M80 110h240M80 160h240M80 210h240" /><path d="M140 60v200M200 60v200M260 60v200" class="fina" /><rect x="90" y="226" width="40" height="34" class="cheio" /><path d="M350 60v200" class="cota-svg" /><path d="M342 60h16M342 260h16" class="cota-svg" /></svg>
               <figcaption>
@@ -251,9 +261,9 @@
               </figcaption>
             </figure>
           </li>
-          <li class="obra" data-tipo="industrial">
+          <li class="obra reveal" data-tipo="industrial">
             <figure>
-              <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob3t"><title id="ob3t">Pórtico de galpão em estrutura metálica com treliça</title><path d="M40 260h320" /><path d="M70 260V140L200 70l130 70v120" /><path d="M70 140h260" /><path d="M100 140l34-18 34 18 32-18 32 18 34-18 34 18" class="fina" /><path d="M134 122v18M168 122v18M200 110v30M232 122v18M266 122v18" class="fina" /><path d="M70 280h260" class="cota-svg" /><path d="M70 272v16M330 272v16" class="cota-svg" /></svg>
+              <img class="obra-foto" src="img/obra-galpao.webp" width="1456" height="1088" alt="Interior de galpão logístico com pórticos e treliças de aço cinza em perspectiva, piso de concreto polido vazio. Imagem gerada por IA, ilustrativa." loading="lazy" decoding="async">
               <figcaption>
                 <p class="obra-tipo mono">Industrial · 2024</p>
                 <h3>Galpão logístico no Distrito Industrial</h3>
@@ -262,7 +272,7 @@
               </figcaption>
             </figure>
           </li>
-          <li class="obra" data-tipo="laudo">
+          <li class="obra reveal" data-tipo="laudo">
             <figure>
               <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob4t"><title id="ob4t">Parede com fissura inclinada e medição</title><rect x="60" y="40" width="280" height="220" /><path d="M110 240l40-50 20 10 36-60 18 8 46-88" class="fissura" /><circle cx="206" cy="140" r="26" class="fina" /><path d="M232 140h60" class="cota-svg" /><path d="M292 134v12" class="cota-svg" /></svg>
               <figcaption>
@@ -273,7 +283,7 @@
               </figcaption>
             </figure>
           </li>
-          <li class="obra" data-tipo="reforma">
+          <li class="obra reveal" data-tipo="reforma">
             <figure>
               <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob5t"><title id="ob5t">Parede com abertura de vão escorada por viga nova</title><rect x="60" y="40" width="280" height="220" /><rect x="130" y="110" width="140" height="150" class="vazio" /><rect x="120" y="90" width="160" height="20" class="cheio" /><path d="M130 110v150M270 110v150" /><path d="M60 150h70M270 150h70" class="fina" /><path d="M130 280h140" class="cota-svg" /><path d="M130 272v16M270 272v16" class="cota-svg" /></svg>
               <figcaption>
@@ -284,7 +294,7 @@
               </figcaption>
             </figure>
           </li>
-          <li class="obra" data-tipo="residencial">
+          <li class="obra reveal" data-tipo="residencial">
             <figure>
               <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob6t"><title id="ob6t">Planta de casa térrea com laje e varanda</title><rect x="50" y="70" width="300" height="170" /><path d="M50 150h180M230 70v170M140 150v90M290 70v100M230 170h120" /><path d="M50 70l0-20M350 70l0-20M50 56h300" class="cota-svg" /><rect x="90" y="110" width="30" height="8" class="cheio" /></svg>
               <figcaption>
@@ -295,9 +305,9 @@
               </figcaption>
             </figure>
           </li>
-          <li class="obra" data-tipo="laudo">
+          <li class="obra reveal" data-tipo="laudo">
             <figure>
-              <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob7t"><title id="ob7t">Prancheta de vistoria com lista de itens conferidos</title><rect x="90" y="40" width="220" height="230" /><rect x="160" y="28" width="80" height="24" class="cheio" /><path d="M120 100h28M160 100h120M120 140h28M160 140h120M120 180h28M160 180h120M120 220h28M160 220h120" class="fina" /><path d="M124 100l8 8 14-16M124 140l8 8 14-16M124 180l8 8 14-16" /></svg>
+              <img class="obra-foto" src="img/obra-vistoria.webp" width="1456" height="1088" alt="Prancheta com lista de vistoria, nível de bolha e trena sobre o piso de porcelanato de um apartamento novo vazio. Imagem gerada por IA, ilustrativa." loading="lazy" decoding="async">
               <figcaption>
                 <p class="obra-tipo mono">Laudo · 2025</p>
                 <h3>Recebimento de apartamento novo</h3>
@@ -306,7 +316,7 @@
               </figcaption>
             </figure>
           </li>
-          <li class="obra" data-tipo="comercial">
+          <li class="obra reveal" data-tipo="comercial">
             <figure>
               <svg class="obra-figura" viewBox="0 0 400 300" role="img" aria-labelledby="ob8t"><title id="ob8t">Planta de clínica com corredor central e salas</title><rect x="50" y="50" width="300" height="200" /><path d="M50 130h300M50 170h300" /><path d="M110 50v80M170 50v80M230 50v80M290 50v80M110 170v80M190 170v80M270 170v80" /><rect x="60" y="138" width="30" height="24" class="cheio" /><path d="M370 50v200" class="cota-svg" /><path d="M362 50h16M362 250h16" class="cota-svg" /></svg>
               <figcaption>
@@ -326,15 +336,16 @@
     <section id="visita" class="secao">
       <div class="miolo visita-grade">
         <div class="visita-texto">
-          <p class="cota"><span class="cota-num">05</span><span class="cota-linha"></span><span class="cota-rotulo">Visita</span></p>
+          <p class="cota"><span class="reg-cross" aria-hidden="true"></span><span class="cota-num">05</span><span class="cota-linha"></span><span class="cota-rotulo">Visita</span></p>
           <h2>Peça um laudo ou uma visita.</h2>
           <p class="secao-frase">Preencha os dados e toque em "Revisar pedido". O site confere o que falta e mostra um resumo. Nesta demonstração, nada é enviado.</p>
+          <figure class="visita-foto"><img src="img/escritorio-equipe.webp" width="1088" height="1360" alt="Duas pessoas de costas e de perfil, em um escritório de engenharia, debruçadas sobre uma prancha de projeto aberta em mesa de concreto. Imagem gerada por IA, ilustrativa." loading="lazy" decoding="async"></figure>
           <address class="visita-contato">
             <p><strong>Prumo Engenharia</strong><br>Rua das Cotas, 120, sala 4<br>Cuiabá, MT (endereço fictício)</p>
             <p>(65) 0000-0000 (fictício)<br>Segunda a sexta, 8h às 18h</p>
           </address>
         </div>
-        <form id="form-visita" class="form-visita" novalidate>
+        <form id="form-visita" class="form-visita reveal" novalidate>
           <div class="campo">
             <label for="nome">Seu nome</label>
             <input id="nome" name="nome" type="text" autocomplete="name" required minlength="3">
@@ -436,9 +447,15 @@
   </main>
 
   <footer class="rodape escuro">
-    <div class="miolo rodape-linha">
-      <p><strong>Prumo Engenharia</strong> · CREA/MT 000000 · Rua das Cotas, 120, Cuiabá, MT. Empresa, pessoas, números, obras e endereço fictícios.</p>
-      <p>Site de demonstração feito pela <a href="https://mileumalinhas.com.br" rel="noopener">Mil e Uma Linhas!</a>. Nenhum dado é enviado ou guardado.</p>
+    <div class="rodape-status" aria-label="Dados do escritório (fictícios)">
+      <div class="miolo status-strip"><span class="st"><span class="st-k">CREA/MT</span><span class="st-v mono">000000</span></span><span class="st"><span class="st-k">Sede</span><span class="st-v mono">Cuiabá</span></span><span class="st"><span class="st-k">Canteiro</span><span class="st-v mono">14 anos</span></span><span class="st"><span class="st-k">Projetos</span><span class="st-v mono">212</span></span></div>
+    </div>
+    <div class="miolo rodape-miolo">
+      <p class="rodape-marca" id="rodape-marca" aria-label="Prumo"><span class="reg-cross reg-cross-trena" aria-hidden="true"></span><span class="fch" aria-hidden="true">P</span><span class="fch" aria-hidden="true">R</span><span class="fch" aria-hidden="true">U</span><span class="fch" aria-hidden="true">M</span><span class="fch" aria-hidden="true">O</span></p>
+      <div class="rodape-linha">
+        <p><strong>Prumo Engenharia</strong> · CREA/MT 000000 · Rua das Cotas, 120, Cuiabá, MT. Empresa, pessoas, números, obras e endereço fictícios.</p>
+        <p>Site de demonstração feito pela <a href="https://mileumalinhas.com.br" rel="noopener">Mil e Uma Linhas!</a>. Nenhum dado é enviado ou guardado.</p>
+      </div>
     </div>
   </footer>
 

@@ -41,8 +41,9 @@ O estudo completo está em [`docs/identidade.md`](docs/identidade.md), inclusive
 - **Paleta:** Concreto `#ECE9E4` (fundo), Argamassa `#DCD8D1` (apoio), Grafite quente `#2A2724` (texto e seções escuras), Aço `#5B5F66` (texto secundário e cotas), Linha `#B9B4AB` (bordas e grade) e Trena `#F2B705` (a única cor viva, uma vez por tela: o grifo do título, a etapa ativa, o filtro ativo, a barra do acabamento). Fugi de propósito do azul-corporativo e do laranja de capacete: as cores vêm do canteiro, concreto curado, aço e o amarelo da trena.
 - **Fontes:** Archivo nos títulos (um pouco condensada, como letra de prancheta) e no texto; IBM Plex Mono em todos os números, cotas, valores e códigos, porque número alinhado em coluna passa precisão. As duas são locais, em `fonts/`, com licença SIL OFL.
 - **Grade visível:** linhas finas a cada 64px no fundo das seções escuras e "cotas" (linha com traço nas pontas e rótulo em mono) abrindo cada seção e medindo a foto do hero.
-- **Foto do hero:** contêiner 3:2 com cantos retos. A imagem em `img/hero.webp` é uma foto gerada por IA no Canva (ilustrativa, não é uma obra real).
-- **Movimento:** só a cota do hero se esticando e o grifo aparecendo na abertura, mais as barras crescendo quando o resultado muda. Com "reduzir movimento" ligado no aparelho, nada se mexe.
+- **Fotos:** contêineres com cantos retos e proporção fixa. A foto do hero (`img/hero.webp`) é gerada por IA no Canva. As demais fotos (`img/servico-projeto.webp`, `img/servico-laudo.webp`, `img/servico-acompanhamento.webp` em 3:2; `img/obra-sobrado.webp`, `img/obra-galpao.webp`, `img/obra-vistoria.webp` em 4:3; `img/escritorio-equipe.webp` em 4:5) também são geradas por IA no Canva, com os prompts de `docs/identidade.md`, e convertidas para webp no nome e na proporção finais. Todas as fotos são ilustrativas: não são obras, pessoas nem lugares reais.
+- **Design systems (leva final):** as seções claras seguem o Grotesk Zero 45 (grão, cruz de registro, hairlines, botões preset, ledger em mono, faixa de glifos, cabeçalho em `mix-blend-mode: difference`, rodapé revelado por baixo com a palavra PRUMO) e as escuras seguem o IX-7 Mission (campo de grade com brilho e vinheta, painel de vidro no resultado do estimador, faixa de status, cartões de token no detalhe da etapa). A lista completa está em `docs/identidade.md`.
+- **Movimento:** na abertura as duas linhas do título sobem, depois a cota se estica e o grifo aparece; o título engrossa perto do ponteiro; os blocos sobem 30px ao entrar na tela; a faixa de glifos rola; o grão treme. Com "reduzir movimento" ligado no aparelho, nada se mexe.
 
 ## Como funciona por dentro (em linguagem comum)
 
@@ -56,11 +57,11 @@ Pense em uma planilha de orçamento e um cronograma de obra que vivem dentro da 
 ## Detalhes técnicos
 
 - HTML, CSS e JavaScript puros. Sem framework, sem biblioteca, sem CDN, sem fonte externa, sem analytics.
-- `Content-Security-Policy` por meta tag: `default-src 'self'`, sem script inline, sem atributo `style`, `connect-src 'none'`, `form-action 'none'`. As larguras das barras são definidas por CSSOM (`style.setProperty`), permitido pela CSP. Detalhes em [`docs/vistoria.md`](docs/vistoria.md).
+- `Content-Security-Policy` por meta tag: `default-src 'self'`, sem script inline, sem atributo `style`, `connect-src 'none'`, `form-action 'none'`. As larguras das barras, o peso das letras do título e do rodapé e a ordem dos blocos revelados são definidos por CSSOM (`style.setProperty`, `style.fontWeight`), permitido pela CSP. O grão é um SVG em `data:` URI no CSS, coberto por `img-src 'self' data:`. Detalhes em [`docs/vistoria.md`](docs/vistoria.md).
 - Acessibilidade: contraste AA conferido para todas as combinações da paleta (a maioria AAA), foco visível (grafite no claro, trena no escuro), navegação por teclado no menu, nos filtros, nas etapas e nos formulários, `aria-pressed` nos filtros e nas etapas, `aria-live` nos resultados, mensagens de erro ligadas aos campos por `aria-describedby`, SVGs do portfólio com `title`, `lang="pt-BR"`.
 - Celular primeiro: uma coluna a partir de 320px, duas a partir de 600px, grade completa a partir de 900px. Os campos têm 48px de altura e os botões 44px ou mais.
 - Fontes locais: Archivo variável (eixos `wght` e `wdth`) e IBM Plex Mono 400 e 500, em woff2 latino, com as licenças ao lado.
-- Arquivos: `index.html`, `404.html` (caminhos absolutos em `/engenharia/`), `robots.txt`, `sitemap.xml`, `favicon.svg`, `css/estilo.css`, `js/app.js`, `img/hero.webp`, `fonts/`, `docs/` (identidade, vistoria e capturas), `tests/site.cjs`.
+- Arquivos: `index.html`, `404.html` (caminhos absolutos em `/engenharia/`), `robots.txt`, `sitemap.xml`, `favicon.svg`, `css/estilo.css`, `js/app.js`, `img/` (hero e as sete fotos das seções), `fonts/`, `docs/` (identidade, vistoria e capturas), `tests/site.cjs`.
 
 ## Como rodar
 

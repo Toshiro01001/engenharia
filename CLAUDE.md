@@ -11,4 +11,5 @@ Site de demonstração de um escritório fictício de engenharia civil (projeto 
 - Ao terminar uma alteração, entregue a mensagem de commit em dois blocos rotulados: "Título" (até 50 caracteres) e "Descrição" (estendida, com exatamente o que foi feito).
 - Entregue arquivos soltos, nunca em `.zip`.
 - O repositório é público: não coloque senhas, chaves secretas nem dados pessoais em arquivos versionados.
-- A foto do hero (`img/hero.webp`) é provisória, gerada com Pillow; o prompt para a foto definitiva está em `docs/identidade.md`, seção "Foto do hero". Ao trocar, mantenha 3:2 e 1600px de largura.
+- A foto do hero (`img/hero.webp`) já é a gerada no Canva. As sete fotos das seções (`img/servico-*.webp`, `img/obra-*.webp`, `img/escritorio-equipe.webp`) também são geradas no Canva; os prompts estão em `docs/identidade.md`, seção "Fotos (leva final)". Ao trocar, mantenha o nome e a proporção de cada uma.
+- Os padrões visuais da leva final (Grotesk Zero 45 nas seções claras, IX-7 Mission nas escuras) estão listados em `docs/identidade.md`, seção "Design systems aplicados". Não acrescente biblioteca, fonte ou script externo: a CSP é estrita.

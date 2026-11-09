@@ -10,15 +10,23 @@
   const inteiro = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 });
   const dataCurta = new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "short", year: "numeric" });
   const mesAno = new Intl.DateTimeFormat("pt-BR", { month: "long", year: "numeric" });
+  const movimentoReduzido = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const ponteiroFino = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+  /* Marca que o JS está rodando: só então os blocos .reveal começam invisíveis. */
+  document.documentElement.classList.add("js");
 
   /* ---------- Menu no celular ---------- */
   (function menu() {
     const botao = $(".menu-botao");
     const menu = $("#menu");
     if (!botao || !menu) return;
-    const fecha = () => { menu.classList.remove("aberto"); botao.setAttribute("aria-expanded", "false"); };
+    const topo = $(".topo");
+    const fecha = () => { menu.classList.remove("aberto"); topo.classList.remove("menu-aberto"); botao.setAttribute("aria-expanded", "false"); };
     botao.addEventListener("click", () => {
       const aberto = menu.classList.toggle("aberto");
+      /* Com o menu aberto o cabeçalho ganha fundo sólido (sai do mix-blend-mode) para os links ficarem legíveis sobre qualquer conteúdo. */
+      topo.classList.toggle("menu-aberto", aberto);
       botao.setAttribute("aria-expanded", String(aberto));
     });
     $$("a", menu).forEach((a) => a.addEventListener("click", fecha));
@@ -197,7 +205,8 @@
     /* Monta os botões uma vez */
     ETAPAS.forEach((etapa, i) => {
       const li = document.createElement("li");
-      li.className = "gantt-item";
+      li.className = "gantt-item reveal";
+      li.style.setProperty("--i", String(i));
       const botao = document.createElement("button");
       botao.type = "button";
       botao.className = "gantt-botao";
@@ -391,4 +400,74 @@
   })();
 
   iniciaEstimador();
+
+  /* ---------- Revelação em lote ao rolar (.reveal -> .visible) ---------- */
+  (function revela() {
+    const blocos = $$(".reveal");
+    if (!blocos.length) return;
+    if (!("IntersectionObserver" in window)) { blocos.forEach((b) => b.classList.add("visible")); return; }
+    /* Escalona 80ms entre irmãos do mesmo grupo (mesmo pai) */
+    const grupos = new Map();
+    blocos.forEach((b) => {
+      if (b.style.getPropertyValue("--i")) return;
+      const pai = b.parentElement;
+      const n = grupos.get(pai) || 0;
+      b.style.setProperty("--i", String(n));
+      grupos.set(pai, n + 1);
+    });
+    const io = new IntersectionObserver((entradas) => {
+      entradas.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0 });
+    blocos.forEach((b) => io.observe(b));
+  })();
+
+  /* ---------- Eixo de peso: as palavras do título engrossam perto do ponteiro ---------- */
+  (function eixoDePeso() {
+    const titulo = $(".hero-titulo");
+    if (!titulo || !ponteiroFino.matches || movimentoReduzido.matches) return;
+    const palavras = $$(".palavra", titulo).map((el) => ({ el, atual: 600, alvo: 600 }));
+    let ponteiro = null;
+    let quadro = 0;
+    function passo() {
+      quadro = 0;
+      let mexendo = false;
+      palavras.forEach((p) => {
+        if (ponteiro) {
+          const r = p.el.getBoundingClientRect();
+          const cx = r.left + r.width / 2;
+          const cy = r.top + r.height / 2;
+          const d = Math.hypot(ponteiro.x - cx, ponteiro.y - cy);
+          p.alvo = d < 200 ? 760 : 600;
+        } else {
+          p.alvo = 600;
+        }
+        const novo = p.atual + (p.alvo - p.atual) * 0.16;
+        if (Math.abs(novo - p.atual) > 0.2) mexendo = true;
+        p.atual = novo;
+        p.el.style.fontWeight = String(Math.round(novo));
+      });
+      if (mexendo) quadro = requestAnimationFrame(passo);
+    }
+    const agenda = () => { if (!quadro) quadro = requestAnimationFrame(passo); };
+    titulo.addEventListener("pointermove", (e) => { ponteiro = { x: e.clientX, y: e.clientY }; agenda(); });
+    titulo.addEventListener("pointerleave", () => { ponteiro = null; agenda(); });
+  })();
+
+  /* ---------- Rodapé: a palavra PRUMO afina sob o ponteiro ---------- */
+  (function wordmark() {
+    const marca = $("#rodape-marca");
+    if (!marca || !ponteiroFino.matches || movimentoReduzido.matches) return;
+    const letras = $$(".fch", marca);
+    const repousa = () => letras.forEach((l) => { l.style.fontWeight = "900"; });
+    marca.addEventListener("pointermove", (e) => {
+      letras.forEach((l) => {
+        const r = l.getBoundingClientRect();
+        const dist = Math.abs(e.clientX - (r.left + r.width / 2)) / Math.max(r.width, 1);
+        /* 900 sob o ponteiro cai para 150; quem está longe volta para 900 */
+        const peso = 900 - Math.max(0, 1 - Math.min(dist * 2.2, 1)) * 750;
+        l.style.fontWeight = String(Math.round(peso));
+      });
+    });
+    marca.addEventListener("pointerleave", repousa);
+  })();
 })();
